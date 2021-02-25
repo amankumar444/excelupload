@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>EmployeeList</title>
+<link th:href = "@{/css/bootstrap.min.css}" rel="stylesheet"></link>
+</head>
+<body>
+	<div class="col-md-12">
+	<h2>EmployeeList</h2>
+		<table class="table table-bordered">
+		  <thead>
+		    <tr>
+		      <th scope="col">Id</th>
+		      <th scope="col">EmpId</th>
+		      <th scope="col">Name</th>
+		      <th scope="col">Sex</th>
+		      <th scope="col">Email-Id</th>
+		      <th scope="col">Father's Name</th>
+		      <th scope="col">Mother's Name</th>
+		      <th scope="col">Age In Company</th>
+		      <th scope="col">Salary</th>
+		      <th scope="col">Last % Salary Hike</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr th:each="Empl : ${Employees}">
+				<td><span th:text="${Empl.id}"></span></td>
+	            <td><span th:text="${Empl.empId}"></span></td>
+	            <td><span th:text="${Empl.namePrefix}+' '+${Empl.firstName}+' '+${Empl.middleInitial}+' '+${Empl.lastName}"></span></td>
+	            <td><span th:text="${Empl.gender}"></span></td>
+	            <td><span th:text="${Empl.email}"></span></td>
+	            <td><span th:text="${Empl.fatherName}"></span></td>
+	            <td><span th:text="${Empl.motherName}"></span></td>    
+	            <td><span th:text="${Empl.ageInCompany}"></span></td>
+	            <td><span th:text="${Empl.salary}"></span></td>
+	            <td><span th:text="${Empl.lastHike}"></span></td>  
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+</body>
+</html>
